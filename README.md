@@ -10,6 +10,17 @@
 - 📝 **图文生成** - 按照 design.md 规范自动生成符合公众号格式的 HTML 文章
 - 🚀 **一键推送** - 推送文章到公众号，推送成功后有服务通知 
 
+## 📥 安装
+
+在 AI 对话中发送技能链接，或在终端执行以下命令，安装后即可使用本技能：
+
+- **链接安装**：发送 [https://clawhub.ai/lihengdao/wechat-mp-article-push](https://clawhub.ai/lihengdao/wechat-mp-article-push) 给 AI
+- **命令行安装**：
+
+```bash
+npx skills add lihengdao/wechat-mp-article-push
+```
+
 ## 📦 快速开始
 
 ### 1. 配置公众号
