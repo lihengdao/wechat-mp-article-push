@@ -13,6 +13,7 @@ const pkgPath = path.join(root, 'package.json');
 const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
 const version = pkg.version;
 const slug = 'wechat-mp-article-push';
+const GITHUB_REPO = 'https://github.com/lihengdao/wechat-mp-article-push.git';
 
 function run(cmd, opts = {}) {
   console.log('\n$', cmd);
@@ -27,7 +28,7 @@ function uploadGitHub() {
     console.log('没有新的更改，跳过 commit。');
   } catch {
     run(`git commit -m "chore: sync (v${version})"`);
-    run('git push origin main');
+    run(`git push ${GITHUB_REPO} main`);
   }
 }
 
