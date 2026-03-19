@@ -50,7 +50,13 @@ function uploadGitHub() {
       console.log('没有新的更改，跳过 commit。');
     } catch {
       runInRepo(`git commit -m "chore: sync (v${version})"`);
-      runInRepo(`git subtree push --prefix=${SUBTREE_PREFIX} ${GITHUB_REPO} main`);
+      const subtreeBranch = 'subtree-push-temp';
+      runInRepo(`git subtree split --prefix=${SUBTREE_PREFIX} -b ${subtreeBranch}`);
+      try {
+        runInRepo(`git push ${GITHUB_REPO} ${subtreeBranch}:main --force`);
+      } finally {
+        runInRepo(`git branch -D ${subtreeBranch}`);
+      }
     }
   }
 }
