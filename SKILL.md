@@ -64,6 +64,8 @@ node push-article-https.js 我的文章.html
 
 脚本会从 HTML 里读 `<title>…</title>` 作为推送标题，整份文件作为正文，结果在终端打印 JSON。
 
+- **兼容其它 Skill 生成的 HTML**：把该文件复制到本目录后，同样执行上述命令即可完成公众号推送。
+
 **接口说明**（供查阅）：请求地址为 config.json 中的 `apiBase`（缺省 `https://api.pcloud.ac.cn/openClawService`），**POST**、`Content-Type: application/json`，Body 含 `openId`、`title`、`content`、`sendMode: "draft"`，custom 模式需加 `accountId`。默认进**草稿箱**，未认证号勿用群发/直接发布。
 
 
