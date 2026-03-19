@@ -1,9 +1,9 @@
 ---
 name: wechat-mp-article-push
-description: 公众号文章图文生成与推送。先完成在线向导，进行公众号的配置（无需泄露公众号密钥、无需配置白名单IP等操作）；配置与设计规范均在「wechat-mp-article-push」Skill 目录内；写文章读 design.md，推送读同目录 config.json 后 POST 到公众号。
+description: 微信公众号图文生成与推送技能。支持从 AI 生成符合公众号规范的 HTML 文章,并通过 API 推送到草稿箱或直接发布。包含完整的文章格式规范、配置向导和推送脚本。
 ---
 
-# wechat-mp-article-push · 公众号文章图文生成与推送
+# wechat-mp-article-push · 公众号图文生成与推送
 
 ## 路径约定
 
@@ -47,15 +47,15 @@ EOF
 
 ---
 
-## 第三步：写文章图文
+## 第三步：写公众号文章
 
-读取 **同目录** 的 **`design.md`**；推送时使用创建的HTML文件。
+读取 **同目录** 的 **`design.md`** 规范，创建 HTML 文件；推送时使用创建的HTML文件。
 
 ---
 
 ## 第四步：推送到公众号
 
-`push-article-https.js`、`config.json`和 HTML 应该在同一个目录： **wechat-mp-article-push**，若 HTML 在其他路径，请先**复制到wechat-mp-article-push目录**。 。然后执行（只传 HTML 文件名）：
+`push-article-https.js`、`config.json`和 HTML文件 应该在同一个目录： **wechat-mp-article-push**，若 HTML文件 在其他路径，请先**复制到wechat-mp-article-push目录** 。然后执行（只传 HTML 文件名）：
 
 ```bash
 cd wechat-mp-article-push
@@ -74,7 +74,7 @@ node push-article-https.js 我的文章.html
 | 文件 | 作用 |
 |------|------|
 | **SKILL.md** | 本说明 |
-| **design.md** | 文章图文 HTML 规范 |
+| **design.md** | 图文 HTML 规范 |
 | **config.example.json** | 字段说明（fieldsHelp）+ 示例 |
 | **config.json** | 向导生成后的真实配置 |
 | **push-article-https.js** | 推送脚本 |
