@@ -7,7 +7,7 @@ alwaysApply: true
 
 ## 1. 基础结构
 
-**单文件，文件名必须为 index.html**
+**单html文件，文件名YYYYMMDD_related_name.html**
 
 ```html
 <!DOCTYPE html>
