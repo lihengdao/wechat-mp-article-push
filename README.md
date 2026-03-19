@@ -26,13 +26,15 @@ https://app.pcloud.ac.cn/design/wechat-mp-article-push.html
 
 ### 2. 保存配置
 
-将配置保存到技能目录下的 `config.json` 文件中。
+AI将用户发送的配置保存到技能目录下的 `config.json` 文件中。
 
 ### 3. 生成文章
 
-根据 `design.md` 规范生成 HTML 文章文件。
+用户发送文章创作要求给AI，AI根据 `design.md` 规范生成 HTML 文件。
 
 ### 4. 推送文章
+
+AI调用脚本推送文章到公众号
 
 ```bash
 cd wechat-mp-article-push
