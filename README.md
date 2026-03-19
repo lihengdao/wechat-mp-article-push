@@ -14,7 +14,7 @@
 
 ### 1. 配置公众号
 
-访问配置向导完成公众号配置:
+用户访问配置向导完成公众号配置:
 
 ```
 https://app.pcloud.ac.cn/design/wechat-mp-article-push.html
