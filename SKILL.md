@@ -1,6 +1,6 @@
 ---
 name: wechat-mp-article-push
-description: 微信公众号图文生成与推送技能。支持从 AI 生成符合公众号规范的 HTML 文章,并通过 API 推送到草稿箱或直接发布。包含完整的文章格式规范、配置向导和推送脚本。
+description: 微信公众号图文生成与推送技能。支持通过AI生成符合公众号规范的文章,并推送到公众号草稿箱或直接发布，兼容其它SKILL生成的文章进行推送。无需泄露公众号密钥，无需配置公众号白名单。包含完整的文章格式规范、配置向导和推送脚本。
 ---
 
 # wechat-mp-article-push · 公众号图文生成与推送
@@ -13,7 +13,7 @@ description: 微信公众号图文生成与推送技能。支持从 AI 生成符
 |------|------|
 | **SKILL.md** | `wechat-mp-article-push 目录/` |
 | **design.md** | 同上 |
-| **config.json** | **同上**（与 SKILL.md **同级**） |
+| **config.json** | 同上 |
 | **config.example.json** | 同上 |
 
 AI ：**先定位本 Skill 的根目录（看 SKILL.md 在哪）**，再在同目录读写 **config.json**、**design.md**。
@@ -64,7 +64,7 @@ node push-article-https.js 我的文章.html
 
 脚本会从 HTML 里读 `<title>…</title>` 作为推送标题，整份文件作为正文，结果在终端打印 JSON。
 
-- **兼容其它 Skill 生成的 HTML**：把该文件复制到本目录后，同样执行上述命令即可完成公众号推送。
+- **兼容其它 Skill 生成的 HTML**：把该 HTML 文件复制到本目录后，同样执行上述命令即可完成公众号推送。
 
 **接口说明**（供查阅）：请求地址为 config.json 中的 `apiBase`（缺省 `https://api.pcloud.ac.cn/openClawService`），**POST**、`Content-Type: application/json`，Body 含 `openId`、`title`、`content`、`sendMode: "draft"`，custom 模式需加 `accountId`。默认进**草稿箱**，未认证号勿用群发/直接发布。
 
