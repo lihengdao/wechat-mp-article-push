@@ -28,8 +28,7 @@ function uploadGitHub() {
     console.log('没有新的更改，跳过 commit。');
   } catch {
     run(`git commit -m "chore: sync (v${version})"`);
-    run(`git pull ${GITHUB_REPO} main --no-edit`);
-    run(`git push ${GITHUB_REPO} main`);
+    run(`git push ${GITHUB_REPO} main --force`);
   }
 }
 
